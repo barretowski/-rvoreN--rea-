@@ -9,6 +9,9 @@ public class NArea implements Definicoes{
         }
         in_ordem(raiz.getvLig(raiz.getTl()));
     }
+    public void in_ordem(){
+        in_ordem(raiz);
+    }
     /*public void pos_o(No raiz, Pilha pilha){
         if(raiz!=null){
             for(int i=raiz.getTl()-1; i>=0;i--){
