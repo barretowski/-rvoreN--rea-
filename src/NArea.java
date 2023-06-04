@@ -1,30 +1,49 @@
 public class NArea implements Definicoes{
     private No raiz;
+    public No getRaiz(){
+        return this.raiz;
+    }
     public void in_ordem(No raiz){
-        if(raiz!=null){
-            for(int i=0; i<raiz.getTl();i++){
+        if(raiz != null){
+            for(int i=0; i<raiz.getTl(); i++){
                 in_ordem(raiz.getvLig(i));
                 System.out.println(raiz.getvInfo(i));
             }
-        }
-        in_ordem(raiz.getvLig(raiz.getTl()));
-    }
-    public void in_ordem(){
-        in_ordem(raiz);
-    }
-    /*public void pos_o(No raiz, Pilha pilha){
-        if(raiz!=null){
-            for(int i=raiz.getTl()-1; i>=0;i--){
-                pilha.push(raiz.getvInfo(i));
-                pos_o(raiz.getvInfo(i),pilha);
+
+            // Verificar se a última subárvore existe antes de chamar recursivamente
+            if (raiz.getvLig(raiz.getTl()) != null) {
+                in_ordem(raiz.getvLig(raiz.getTl()));
             }
         }
-        pos_o(raiz.getvInfo(0,pilha);
     }
-    public void pos_ordem(){
-        Pilha pilha = new Pilha();
-        pos_o(raiz, pilha);
-    }*/
+
+    public void pos_ordem(No raiz) {
+        if (raiz != null) {
+            for (int i = 0; i < raiz.getTl(); i++) {
+                pos_ordem(raiz.getvLig(i));
+            }
+
+            pos_ordem(raiz.getvLig(raiz.getTl()));  // Chamar recursivamente a última subárvore
+
+            for (int i = 0; i < raiz.getTl(); i++) {
+                System.out.println(raiz.getvInfo(i));
+            }
+        }
+    }
+
+    public void pre_ordem(No raiz) {
+        if (raiz != null) {
+            for (int i = 0; i < raiz.getTl(); i++) {
+                System.out.println(raiz.getvInfo(i));
+                pre_ordem(raiz.getvLig(i));
+            }
+
+            pre_ordem(raiz.getvLig(raiz.getTl()));  // Chamar recursivamente a última subárvore
+        }
+    }
+
+
+
     public void inserir(int info){
         No p;
         int pos;
@@ -51,5 +70,9 @@ public class NArea implements Definicoes{
                 }
             }
         }
+    }
+
+    public void exibir(){
+        in_ordem(getRaiz());
     }
 }

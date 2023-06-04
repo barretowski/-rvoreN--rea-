@@ -26,7 +26,7 @@ public class No implements Definicoes {
     }
 
     public void setvLig(int p, No lig) {
-        //this.vLig[p] = lig;
+        this.vLig[p] = lig;
     }
 
     public int getTl() {
@@ -38,6 +38,17 @@ public class No implements Definicoes {
     }
 
     public int buscarPos(int info) {
-        return info;
+        int pos = 0;
+        while(pos<tl && info>vInfo[pos]){
+            pos++;
+        }
+        return pos;
+    }
+
+    public void remanejar(int pos){
+        //liberar a posição indica
+        for(int i=tl-1; i>=pos; i--){
+            vInfo[i+1]=vInfo[i];
+        }
     }
 }
