@@ -8,4 +8,5 @@ Em uma árvore n-ária, cada nó pode armazenar um elemento de dado e apontar pa
 ![image](https://github.com/barretowski/Arvore-N-Area/assets/69700545/b0ceb344-77f1-417e-b223-5417724c4dd2)
 
 # Forma final
-![image](https://github.com/barretowski/Arvore-N-Area/assets/69700545/0d7a9ec7-2eaa-4828-8f60-751992c48dc5)
+![image](https://github.com/barretowski/Arvore-N-Area/assets/69700545/3d5dd23f-034f-4932-bf9c-07001f4fc189)
+
